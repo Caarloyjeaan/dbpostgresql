@@ -1,15 +1,14 @@
 import psycopg2
 from config import *
 
-conexion = psycopg2.connect(user=USER, password=PASSWORD, host=HOST, port=PORT, database=DB)
+conexion = psycopg2.connect(user="postgres", password="Periferia2020", host="127.0.0.1", port="5432", database="postgres")
 
 cursor = conexion.cursor()
 # %s es un comodin, que permite insertar valores dinánimocs
-sentencia = 'INSERT INTO persona(nombre, apellido, email) VALUES(%s, %s, %s)'
-valores = (('Marcos', 'Cantu', 'mcantu@mail.com'),
-           ('Angel', 'Quintana', 'aquintana@mail.com'),
-           ('Maria', 'Gonzales', 'mgonzales@mail.com'))
-cursor.executemany(sentencia, valores) #executemany para insertar varios registros
+
+#executemany para insertar varios registros
+cursor.execute("INSERT INTO public.insertar_datos(nombre,apellido,email) VALUES ('Jose', 'Pepito', 'Sevilla'), ('Fernando', 'Francisco', 'Valencia'), ('Pedro', 'Agustín', 'Galicia')")
+
 # Guardamos la información en la base de datos
 conexion.commit()
 registros_insertados = cursor.rowcount

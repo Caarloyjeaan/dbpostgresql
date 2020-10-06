@@ -1,7 +1,7 @@
 import psycopg2
 from config import *
 
-conexion = psycopg2.connect(user=USER, password=PASSWORD, host=HOST, port=PORT, database=DB)
+conexion = psycopg2.connect(user="postgres", password="Periferia2020", host="127.0.0.1", port="5432", database="postgres")
 
 cursor = conexion.cursor()
 sentencia = 'DELETE FROM persona WHERE id_persona IN %s' #%s es un comodin, que permite insertar valores dinánimcos

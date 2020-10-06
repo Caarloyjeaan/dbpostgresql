@@ -9,8 +9,6 @@ conexion = psycopg2.connect(user="postgres", password="Periferia2020", host="127
 cursor = conexion.cursor()
 
 #Estructura de control Ejecuta u grupo de sentencias 
-#cursor.execute = 'INSERT INTO public.insertar_datos(nombre, apellido, email) VALUES(%s, %s, %s)' #%s es un comodin, que permite insertar valores dinánimocs
-#valores = ('Carlos', 'Lara', 'clara@mail.com')
 cursor.execute("INSERT INTO public.insertar_datos VALUES ('Angie', 'Vanessa', 'nena.gie@ejemplo.com')")
 
 # Guardamos la información en la base de datos
