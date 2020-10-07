@@ -8,7 +8,7 @@ conexion = psycopg2.connect(user="postgres", password="Periferia2020", host="127
 try:
     cursor = conexion.cursor()
     sentencia = 'INSERT INTO public.insertar_datos(nombre, apellido, email) VALUES(%s, %s, %s)' #%s es un comodin, que permite insertar valores dinánimocs
-    valores = ('Ithan', 'Daniel', 'danielespitia1@outlook.com')
+    valores = ('Ethan', 'Daniel', 'danielespitia1@outlook.com')
     cursor.execute(sentencia, valores)
 
     sentencia = 'UPDATE public.insertar_datos SET nombre = %s, apellido = %s, email = %s WHERE id = %s' #%s es un comodin, que permite insertar valores dinánimcos
