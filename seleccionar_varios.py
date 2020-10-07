@@ -1,10 +1,10 @@
 import psycopg2
 from config import *
 
-conexion = psycopg2.connect(user=USER, password=PASSWORD, host=HOST, port=PORT, database=DB)
+conexion = psycopg2.connect(user="postgres", password="Periferia2020", host="127.0.0.1", port="5432", database="postgres")
 
 cursor = conexion.cursor()
-sentencia = 'SELECT * FROM persona WHERE id_persona IN %s' # IN permite seleccionar varios valores
+sentencia = 'SELECT * FROM public.insertar_datos WHERE id IN %s' # IN permite seleccionar varios valores
 entrada = input("Proporciona las pk a buscar (separado por comas): ")
 tupla = tuple(entrada.split(','))
 print(tupla)
